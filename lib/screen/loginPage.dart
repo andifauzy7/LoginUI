@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widget/customShape.dart';
 import 'package:flutter_app/widget/orangePainter.dart';
 
 class LoginPage extends StatefulWidget {
@@ -36,20 +37,24 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  PreferredSize appBar() {
+  Widget appBar() {
     return PreferredSize(
-      preferredSize: Size.fromHeight(120),
-      child: SafeArea(
-          top: true,
-          child: Container(
-            child: Center(
-              child: Image.asset(
-                "asset/logo.png",
-                fit: BoxFit.cover,
-                width: 160,
+      preferredSize: Size.fromHeight(100),
+      child: AppBar(
+        backgroundColor: Colors.white,
+        shape: CustomShapeBorder(),
+        flexibleSpace: SafeArea(
+            top: true,
+            child: Container(
+              child: Center(
+                child: Image.asset(
+                  "asset/logo.png",
+                  fit: BoxFit.cover,
+                  width: 160,
+                ),
               ),
-            ),
-          )),
+            )),
+      ),
     );
   }
 
